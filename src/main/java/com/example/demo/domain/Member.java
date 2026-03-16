@@ -18,33 +18,33 @@ public class Member {
 
     private String name;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true,nullable = false)
     private String email;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String role;
 
     private String refreshToken;
 
     private LocalDateTime createdAt;
 
-    public Member(String name, String email, String password, String role) {
+    public Member(String name, String email, String password,String role) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.role = "ROLE_USER";
+        this.role="ROLE_USER";
         this.createdAt = LocalDateTime.now();
     }
+
 
     public void update(String name, String email) {
         this.name = name;
         this.email = email;
     }
-
-    public void updateRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
+    public void updateRefreshToken(String refreshToken){
+        this.refreshToken =refreshToken;
     }
 }
